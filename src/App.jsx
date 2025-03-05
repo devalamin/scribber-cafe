@@ -1,9 +1,16 @@
 import React from 'react';
+import Header from './components/Header/Header';
+import Blogs from './components/Blogs/Blogs';
+import Bookmarks from './components/Bookmarks/Bookmarks';
 
 const App = () => {
   return (
-    <div className='flex justify-center text-blue-600 h-screen items-center text-3xl font-bold'>
-      <h4>Hello EveryOne</h4>
+    <div>
+      <Header></Header>
+     <div className='md:flex justify-between gap-2 w-11/12 mx-auto'>
+     <Blogs></Blogs>
+     <Bookmarks></Bookmarks>
+     </div>
     </div>
   );
 };
