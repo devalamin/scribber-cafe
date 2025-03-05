@@ -8,8 +8,16 @@ const App = () => {
   const [bookmarks, setBookmarks] = useState([]);
 
   const handleAddBookmarks = blog => {
+    const bookMarkContainer = document.getElementById('bookmarks-container');
+    bookMarkContainer.classList.remove('hidden');
+    bookMarkContainer.classList.add('transition-width', 'duration-1000');
+    const blogContainer = document.getElementById('blogs-container');
+    blogContainer.classList.remove('md:w-full')
+    blogContainer.classList.add('md:w-2/3', 'transition-width', 'duration-1000')
+    // blogContainer.classList.add('')
+
     console.log('Adding to bookmark', blog.title);
-    const newBookmarks = [...bookmarks,blog];
+    const newBookmarks = [...bookmarks, blog];
     setBookmarks(newBookmarks)
   }
 
