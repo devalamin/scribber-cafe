@@ -17,10 +17,12 @@ const App = () => {
     setBookmarks(newBookmarks)
   }
 
-  const handleReadingTime = time => {
+  const handleReadingTime = (time, id) => {
+    console.log(id);
     handleTransition()
     setReadingTime(readingTime + time);
-    console.log('inside reading time', time);
+    const removedBookmarks = bookmarks.filter(bookmark => bookmark.id !== id)
+    setBookmarks(removedBookmarks)
   }
 
   return (
